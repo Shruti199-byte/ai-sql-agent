@@ -155,7 +155,7 @@ class ExecuteQueryTool(BaseTool):
             return (
                 f"Error: Only SELECT queries are allowed. "
                 f"Received a '{first_word}' statement.",
-                None,                                # ← no artifact on error
+                None,                                
             )
         
         with engine.connect() as conn:
