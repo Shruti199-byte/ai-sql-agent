@@ -6,6 +6,7 @@ engine = create_engine(DATABASE_URL)
 
 with engine.connect() as connection:
     connection.execute(text("""
+                         
         DROP TABLE IF EXISTS marks;
         DROP TABLE IF EXISTS students;
         DROP TABLE IF EXISTS sections;

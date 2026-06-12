@@ -18,8 +18,10 @@ async def run_question(agent, question):
 
 
 async def main():
-    db = SQLDatabase.from_uri(DATABASE_URL)
-
+    db = SQLDatabase.from_uri(
+        DATABASE_URL,
+        
+    )
     llm = ChatOllama(
         model="gemma4",
         temperature=0
@@ -33,11 +35,12 @@ async def main():
     )
 
     questions = [
-        "List all students with their section names.",
-        "Find the top 3 students based on average marks.",
-        "Show students from section A who are also in the top 30 percent of the overall batch based on average marks.",
-        "Show students whose attendance is below 75 percent."
-    ]
+    "List all students with their section names.",
+    "Find the top 3 students based on average marks.",
+    "Show students from section A who are also in the top 30 percent of the overall batch based on average marks.",
+    # "Show students whose attendance is below 75 percent."
+    "show all marks"
+]
 
     for question in questions:
         await run_question(agent, question)
